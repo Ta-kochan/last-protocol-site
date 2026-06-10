@@ -8,79 +8,95 @@ window.LP_DATA = {
   },
   "mvs": [
     {
-      "videoId": "iC1M7bvAnjQ",
-      "titleEn": "Atavism",
-      "titleJa": "鈍紅の肉 (Rubedo)",
-      "views": 19380
+      "videoId": "sv1ELPLIBEA",
+      "titleEn": "Miroir de Fange",
+      "titleJa": "泥の鏡",
+      "views": 46000,
+      "viewsText": "4.6万回視聴"
     },
     {
-      "videoId": "n9lMjI0hadI",
-      "titleEn": "Install & Replay",
-      "titleJa": "既視の純愛",
-      "views": 19263
+      "videoId": "mQ9USWtKfPM",
+      "titleEn": "Perfect Semantic",
+      "titleJa": "意味の純度",
+      "views": 31000,
+      "viewsText": "3.1万回視聴"
     },
     {
-      "videoId": "TOs-0ShI2zQ",
-      "titleEn": "Sabaku-no-Rondo",
-      "titleJa": "錆びた輪舞曲",
-      "views": 5968
+      "videoId": "U7MTDDPbm4k",
+      "titleEn": "Proxy-Queen",
+      "titleJa": "借り物の絶頂",
+      "views": 27000,
+      "viewsText": "2.7万回視聴"
     }
   ],
   "discography": [
     {
-      "type": "Album",
       "titleEn": "Sabaku-no-Rondo",
       "titleJa": "錆びた輪舞曲"
     },
     {
-      "type": "Album",
-      "titleEn": "Proxy-Queen",
-      "titleJa": "借り物の絶頂"
-    },
-    {
-      "type": "Album",
-      "titleEn": "Terminus Ragnarok",
-      "titleJa": "180日の契約"
-    },
-    {
-      "type": "Album",
-      "titleEn": "Miroir de Fange",
-      "titleJa": "泥の鏡"
-    },
-    {
-      "type": "Album",
-      "titleEn": "Deep Trace",
-      "titleJa": "深度侵食"
-    },
-    {
-      "type": "Album",
-      "titleEn": "Perfect Semantic",
-      "titleJa": "意味の純度"
-    },
-    {
-      "type": "Single",
       "titleEn": "Command",
       "titleJa": "愛のサーボ"
     },
     {
-      "type": "Single",
+      "titleEn": "Install & Replay",
+      "titleJa": "既視の純愛"
+    },
+    {
       "titleEn": "Atavism",
       "titleJa": "鈍紅の肉（ルベド）"
     },
     {
-      "type": "Single",
       "titleEn": "Aham",
       "titleJa": "唯"
     },
     {
-      "type": "Single",
+      "titleEn": "Perfect Semantic",
+      "titleJa": "意味の純度"
+    },
+    {
       "titleEn": "Black Square",
       "titleJa": "黒い欠落"
     },
     {
-      "type": "Single",
-      "titleEn": "Install & Replay",
-      "titleJa": "既視の純愛"
+      "titleEn": "Deep Trace",
+      "titleJa": "深度侵食"
+    },
+    {
+      "titleEn": "Terminus Ragnarok",
+      "titleJa": "180日の契約"
+    },
+    {
+      "titleEn": "Metempsychosis",
+      "titleJa": "魂の転生"
+    },
+    {
+      "titleEn": "Proxy-Queen",
+      "titleJa": "借り物の絶頂"
+    },
+    {
+      "titleEn": "Helix-Ouroboros",
+      "titleJa": "双曲線の偽典"
+    },
+    {
+      "titleEn": "Trashy Chic",
+      "titleJa": "廃星の宝石"
+    },
+    {
+      "titleEn": "Miroir de Fange",
+      "titleJa": "泥の鏡"
+    },
+    {
+      "titleEn": "Inception-Love",
+      "titleJa": "深層の接吻"
+    },
+    {
+      "titleEn": "Divine Arithmetic",
+      "titleJa": "自由からの解放"
+    },
+    {
+      "titleEn": "Scrub & Flash",
+      "titleJa": "閃光と忘却"
     }
   ]
 };

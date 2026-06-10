@@ -148,8 +148,7 @@ section:nth-of-type(even){background:var(--bg2)}
   background:var(--rust);transform:scaleY(0);transition:transform .25s;transform-origin:top;
 }
 .disco-item:hover::before{transform:scaleY(1)}
-.disco-item .type{font-family:'Rajdhani';font-size:10px;letter-spacing:.3em;color:var(--rust);text-transform:uppercase}
-.disco-item h3{font-size:16px;letter-spacing:.08em;margin-top:6px;font-family:'Rajdhani';font-weight:600}
+.disco-item h3{font-size:16px;letter-spacing:.08em;font-family:'Rajdhani';font-weight:600}
 .disco-item p{color:var(--sand);font-size:13px;letter-spacing:.12em}
 
 /* about */
@@ -335,7 +334,7 @@ D.mvs.forEach(function(mv){
   card.innerHTML =
     '<div class="video-frame"></div>' +
     '<div class="meta"><h3>' + esc(mv.titleEn) + '</h3>' +
-    '<p>' + esc(mv.titleJa) + ' / ' + mv.views.toLocaleString() + ' views</p></div>';
+    '<p>' + esc(mv.titleJa) + ' / ' + esc(mv.viewsText || mv.views.toLocaleString() + ' views') + '</p></div>';
   grid.appendChild(card);
   mountVideo(card.querySelector('.video-frame'), mv.videoId);
 });
@@ -345,9 +344,7 @@ var disco = document.getElementById('disco-grid');
 D.discography.forEach(function(r){
   var item = document.createElement('div');
   item.className = 'disco-item';
-  item.innerHTML =
-    '<div class="type">' + esc(r.type) + '</div>' +
-    '<h3>' + esc(r.titleEn) + '</h3><p>' + esc(r.titleJa) + '</p>';
+  item.innerHTML = '<h3>' + esc(r.titleEn) + '</h3><p>' + esc(r.titleJa) + '</p>';
   disco.appendChild(item);
 });
 </script>

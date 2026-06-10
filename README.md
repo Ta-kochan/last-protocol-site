@@ -33,11 +33,14 @@ git add -A; git commit -m "Update releases"; git push
 - **MV GALLERY** = 再生数上位3作
 - タイトル末尾のジャンル表記（` - Cyberpunk ...`）は自動除去
 
-### APIキーについて
+### データソース（フォールバックチェーン）
 
-現在、有効な `YOUTUBE_API_KEY` が無いため**RSSフォールバック**（直近15本のみ対象）で動作中。
-古いMVも再生数ランキングに含めるには、Google Cloud Console で YouTube Data API v3 の
-APIキーを発行し、`youtube-ads-report/.env` の `YOUTUBE_API_KEY` を有効な値に差し替えること。
+1. **YouTube Data API** … 正確な再生数。有効な `YOUTUBE_API_KEY` が必要
+2. **InnerTube**（YouTube内部API、キー不要）… 全動画対象、再生数は概数（「4.6万回視聴」等）← 現在これで動作中
+3. **RSSフィード** … 直近15本のみ
+
+正確な再生数を表示したい場合は、Google Cloud Console で YouTube Data API v3 の
+APIキーを発行し、`../youtube-ads-report/.env` の `YOUTUBE_API_KEY` を差し替えること。
 
 ## ローカル確認
 
@@ -58,7 +61,7 @@ python -m http.server 8765 --directory docs
 
 ## TODO
 
-- [ ] 有効な YouTube Data API キーの設定（全動画を再生数ランキング対象に）
+- [ ] 有効な YouTube Data API キーの設定（再生数を概数→正確な値に）
 - [ ] DISCOGRAPHY 各カードに各ストリーミングのアルバムURLをリンク（DistroKidハイパーフォロー等）
 - [ ] OG画像を専用アートワークに差し替え（現状はYouTubeサムネ流用）
 - [ ] アクセス解析（GA4 or Cloudflare Web Analytics）追加
