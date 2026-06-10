@@ -1,0 +1,19 @@
+{
+  "discography": [
+    { "type": "Album", "titleEn": "Sabaku-no-Rondo", "titleJa": "錆びた輪舞曲" },
+    { "type": "Album", "titleEn": "Proxy-Queen", "titleJa": "借り物の絶頂" },
+    { "type": "Album", "titleEn": "Terminus Ragnarok", "titleJa": "180日の契約" },
+    { "type": "Album", "titleEn": "Miroir de Fange", "titleJa": "泥の鏡" },
+    { "type": "Album", "titleEn": "Deep Trace", "titleJa": "深度侵食" },
+    { "type": "Album", "titleEn": "Perfect Semantic", "titleJa": "意味の純度" },
+    { "type": "Single", "titleEn": "Command", "titleJa": "愛のサーボ" },
+    { "type": "Single", "titleEn": "Atavism", "titleJa": "鈍紅の肉（ルベド）" },
+    { "type": "Single", "titleEn": "Aham", "titleJa": "唯" },
+    { "type": "Single", "titleEn": "Black Square", "titleJa": "黒い欠落" },
+    { "type": "Single", "titleEn": "Install & Replay", "titleJa": "既視の純愛" }
+  ],
+  "latest_desc": {
+    "TOs-0ShI2zQ": "砂と錆に覆われた終末の都市を、アコースティックの輪舞が巡る。LAST PROTOCOLの最新章。"
+  },
+  "title_overrides": {}
+}

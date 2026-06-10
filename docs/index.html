@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LAST PROTOCOL — Official</title>
+<meta name="description" content="LAST PROTOCOL is a cyberpunk music unit led by NOVA and ASH. Industrial tension, ritual rhythm, and controlled collapse shape their sound.">
+<meta property="og:title" content="LAST PROTOCOL — Official">
+<meta property="og:description" content="Cyberpunk music unit. 鉄錆の都市に響く、祈りに似たビート。Industrial tension, ritual rhythm, and controlled collapse.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://i.ytimg.com/vi/TOs-0ShI2zQ/maxresdefault.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0908;
+  --bg2:#12100d;
+  --panel:#171411;
+  --line:#2c2620;
+  --text:#e8e1d4;
+  --dim:#9a8f7e;
+  --rust:#e2452a;
+  --rust-dim:#8a3522;
+  --sand:#c9a96a;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Noto Sans JP',sans-serif;
+  font-weight:300;
+  line-height:1.8;
+  overflow-x:hidden;
+}
+body::before{
+  content:"";
+  position:fixed;inset:0;
+  background:repeating-linear-gradient(0deg,transparent 0 2px,rgba(0,0,0,.18) 2px 4px);
+  pointer-events:none;z-index:9999;opacity:.5;
+}
+h1,h2,h3,.en{font-family:'Rajdhani','Noto Sans JP',sans-serif;letter-spacing:.12em}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+/* nav */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(10,9,8,.85);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
+nav .logo{font-family:'Rajdhani';font-weight:700;font-size:15px;letter-spacing:.3em;color:var(--text)}
+nav .logo span{color:var(--rust)}
+nav ul{display:flex;gap:28px;list-style:none}
+nav ul a{font-family:'Rajdhani';font-weight:600;font-size:13px;letter-spacing:.2em;color:var(--dim);transition:color .2s}
+nav ul a:hover{color:var(--rust)}
+
+/* hero */
+header{
+  min-height:92vh;
+  display:flex;flex-direction:column;justify-content:center;align-items:center;
+  text-align:center;position:relative;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% 110%,rgba(226,69,42,.13),transparent),
+    radial-gradient(ellipse 60% 40% at 50% -10%,rgba(201,169,106,.07),transparent),
+    var(--bg);
+}
+header::after{
+  content:"";position:absolute;left:50%;bottom:0;transform:translateX(-50%);
+  width:1px;height:80px;background:linear-gradient(var(--rust),transparent);
+}
+.proto-label{
+  font-family:'Rajdhani';font-weight:600;font-size:12px;letter-spacing:.55em;
+  color:var(--rust);text-transform:uppercase;margin-bottom:18px;
+}
+header h1{
+  font-size:clamp(40px,9vw,96px);font-weight:700;letter-spacing:.18em;
+  line-height:1.05;
+  text-shadow:0 0 40px rgba(226,69,42,.25);
+}
+header h1 .accent{color:var(--rust)}
+.tagline-en{
+  margin-top:26px;font-family:'Rajdhani';font-weight:500;
+  font-size:clamp(13px,2vw,16px);letter-spacing:.18em;color:var(--sand);
+}
+.tagline-ja{margin-top:10px;font-size:14px;color:var(--dim);letter-spacing:.1em}
+.hero-cta{margin-top:48px;display:flex;gap:16px;flex-wrap:wrap;justify-content:center}
+.btn{
+  display:inline-block;padding:13px 34px;
+  font-family:'Rajdhani';font-weight:600;font-size:14px;letter-spacing:.25em;
+  border:1px solid var(--rust);color:var(--rust);
+  transition:all .25s;text-transform:uppercase;
+}
+.btn:hover{background:var(--rust);color:var(--bg);box-shadow:0 0 30px rgba(226,69,42,.4)}
+.btn.ghost{border-color:var(--line);color:var(--dim)}
+.btn.ghost:hover{border-color:var(--sand);color:var(--sand);background:transparent;box-shadow:none}
+
+/* sections */
+section{padding:96px 0}
+section:nth-of-type(even){background:var(--bg2)}
+.sec-head{margin-bottom:48px}
+.sec-head .num{font-family:'Rajdhani';font-size:12px;letter-spacing:.4em;color:var(--rust)}
+.sec-head h2{font-size:clamp(26px,4vw,38px);font-weight:700;letter-spacing:.2em;margin-top:6px}
+.sec-head p{color:var(--dim);font-size:13px;margin-top:8px;letter-spacing:.08em}
+
+/* latest */
+.latest{display:grid;grid-template-columns:1.4fr 1fr;gap:36px;align-items:start}
+.video-frame{position:relative;width:100%;aspect-ratio:16/9;background:#000;border:1px solid var(--line)}
+.video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.yt-lite{position:absolute;inset:0;cursor:pointer;background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center}
+.yt-lite::after{
+  content:"▶";display:flex;align-items:center;justify-content:center;
+  width:68px;height:48px;background:rgba(10,9,8,.8);border:1px solid var(--rust);
+  color:var(--rust);font-size:18px;transition:all .2s;
+}
+.yt-lite:hover::after{background:var(--rust);color:var(--bg)}
+.latest-info h3{font-size:24px;letter-spacing:.15em}
+.latest-info .ja-title{color:var(--sand);font-size:15px;margin-top:4px;letter-spacing:.2em}
+.latest-info .desc{color:var(--dim);font-size:13px;margin-top:18px}
+.stream-links{margin-top:28px;display:flex;flex-direction:column;gap:10px}
+.stream-links a{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:13px 18px;border:1px solid var(--line);background:var(--panel);
+  font-family:'Rajdhani';font-weight:600;font-size:14px;letter-spacing:.15em;
+  transition:all .2s;
+}
+.stream-links a span{color:var(--dim);font-size:11px;letter-spacing:.2em}
+.stream-links a:hover{border-color:var(--rust);color:var(--rust)}
+
+/* mv grid */
+.mv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+.mv-card{border:1px solid var(--line);background:var(--panel);transition:border-color .2s}
+.mv-card:hover{border-color:var(--rust-dim)}
+.mv-card .meta{padding:16px 18px}
+.mv-card .meta h3{font-size:16px;letter-spacing:.12em}
+.mv-card .meta p{color:var(--dim);font-size:12px;margin-top:2px;letter-spacing:.15em}
+
+/* discography */
+.disco{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+.disco-item{
+  border:1px solid var(--line);background:var(--panel);padding:20px 22px;
+  transition:all .2s;position:relative;overflow:hidden;
+}
+.disco-item::before{
+  content:"";position:absolute;left:0;top:0;bottom:0;width:2px;
+  background:var(--rust);transform:scaleY(0);transition:transform .25s;transform-origin:top;
+}
+.disco-item:hover::before{transform:scaleY(1)}
+.disco-item .type{font-family:'Rajdhani';font-size:10px;letter-spacing:.3em;color:var(--rust);text-transform:uppercase}
+.disco-item h3{font-size:16px;letter-spacing:.08em;margin-top:6px;font-family:'Rajdhani';font-weight:600}
+.disco-item p{color:var(--sand);font-size:13px;letter-spacing:.12em}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.about-grid .bio-en{font-family:'Rajdhani';font-weight:500;font-size:17px;line-height:1.9;color:var(--sand);letter-spacing:.04em}
+.about-grid .bio-ja{font-size:14px;color:var(--text)}
+.char-cards{margin-top:32px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.char{border:1px solid var(--line);padding:20px;background:var(--panel)}
+.char h4{font-family:'Rajdhani';font-size:20px;letter-spacing:.3em;color:var(--rust)}
+.char p{font-size:12px;color:var(--dim);margin-top:6px;letter-spacing:.1em}
+
+/* links / footer */
+.sns-grid{display:flex;gap:14px;flex-wrap:wrap}
+.sns-grid a{
+  padding:14px 28px;border:1px solid var(--line);background:var(--panel);
+  font-family:'Rajdhani';font-weight:600;font-size:14px;letter-spacing:.2em;
+  transition:all .2s;
+}
+.sns-grid a:hover{border-color:var(--rust);color:var(--rust)}
+footer{border-top:1px solid var(--line);padding:36px 0;text-align:center}
+footer p{font-family:'Rajdhani';font-size:11px;letter-spacing:.3em;color:var(--dim)}
+
+@media(max-width:820px){
+  nav ul{display:none}
+  .latest,.about-grid{grid-template-columns:1fr}
+  section{padding:64px 0}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="logo" href="#top">LAST<span>_</span>PROTOCOL</a>
+    <ul>
+      <li><a href="#latest">LATEST</a></li>
+      <li><a href="#mv">MV</a></li>
+      <li><a href="#discography">DISCOGRAPHY</a></li>
+      <li><a href="#about">ABOUT</a></li>
+      <li><a href="#links">LINKS</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header id="top">
+  <div class="proto-label">// Cyberpunk Music Unit</div>
+  <h1>LAST<span class="accent">_</span>PROTOCOL</h1>
+  <p class="tagline-en">INDUSTRIAL TENSION. RITUAL RHYTHM. CONTROLLED COLLAPSE.</p>
+  <p class="tagline-ja">鉄錆の都市に響く、祈りに似たビート。崩壊は、ここで音楽になる。</p>
+  <div class="hero-cta">
+    <a class="btn" href="#latest">Latest Release</a>
+    <a class="btn ghost" href="#links">Listen / Follow</a>
+  </div>
+</header>
+
+<section id="latest">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="num">01 / LATEST RELEASE</div>
+      <h2 id="latest-h2">&nbsp;</h2>
+      <p id="latest-sub">最新リリース</p>
+    </div>
+    <div class="latest">
+      <div class="video-frame" id="latest-video"></div>
+      <div class="latest-info">
+        <h3 id="latest-title"></h3>
+        <p class="ja-title" id="latest-ja"></p>
+        <p class="desc" id="latest-desc"></p>
+        <div class="stream-links">
+          <a href="https://open.spotify.com/intl-ja/artist/2xZ7jy1EKRQrOz54rXCycp" target="_blank" rel="noopener">SPOTIFY <span>LISTEN →</span></a>
+          <a href="https://music.apple.com/us/artist/last-protocol/1871839841" target="_blank" rel="noopener">APPLE MUSIC <span>LISTEN →</span></a>
+          <a href="https://www.amazon.co.jp/music/player/artists/B095C3H238/last-protocol" target="_blank" rel="noopener">AMAZON MUSIC <span>LISTEN →</span></a>
+          <a href="https://www.youtube.com/channel/UCKlU7YsZ4vhuwDedbdMYYjA/" target="_blank" rel="noopener">YOUTUBE <span>WATCH →</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="mv">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="num">02 / MUSIC VIDEO</div>
+      <h2>MV GALLERY</h2>
+      <p>もっとも再生されている映像作品</p>
+    </div>
+    <div class="mv-grid" id="mv-grid"></div>
+  </div>
+</section>
+
+<section id="discography">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="num">03 / DISCOGRAPHY</div>
+      <h2>RELEASES</h2>
+      <p>アルバム / シングル、すべてのストリーミングサービスで配信中</p>
+    </div>
+    <div class="disco" id="disco-grid"></div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="num">04 / ABOUT</div>
+      <h2>THE UNIT</h2>
+    </div>
+    <div class="about-grid">
+      <p class="bio-en">LAST PROTOCOL is a cyberpunk music unit led by NOVA and ASH. Industrial tension, ritual rhythm, and controlled collapse shape their sound.</p>
+      <div>
+        <p class="bio-ja">インダストリアルな緊張感、儀式のようなリズム、そして制御された崩壊。LAST PROTOCOLは、AIと共に音楽とビジュアルを生み出すサイバーパンク・ユニットとして、ディストピア神話の世界を一曲ごとに拡張していく。物語の中心に立つのは、対をなす二つの存在。</p>
+        <div class="char-cards">
+          <div class="char"><h4>NOVA</h4><p>再生の象徴。崩壊の先に芽吹くもの。</p></div>
+          <div class="char"><h4>ASH</h4><p>破裂の象徴。臨界を超える衝動。</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="links">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="num">05 / LINKS</div>
+      <h2>FOLLOW</h2>
+    </div>
+    <div class="sns-grid">
+      <a href="https://www.youtube.com/channel/UCKlU7YsZ4vhuwDedbdMYYjA/" target="_blank" rel="noopener">YOUTUBE</a>
+      <a href="https://www.tiktok.com/@last.protocol" target="_blank" rel="noopener">TIKTOK</a>
+      <a href="https://x.com/lastprotocolai" target="_blank" rel="noopener">X</a>
+      <a href="https://open.spotify.com/intl-ja/artist/2xZ7jy1EKRQrOz54rXCycp" target="_blank" rel="noopener">SPOTIFY</a>
+      <a href="https://music.apple.com/us/artist/last-protocol/1871839841" target="_blank" rel="noopener">APPLE MUSIC</a>
+      <a href="https://www.amazon.co.jp/music/player/artists/B095C3H238/last-protocol" target="_blank" rel="noopener">AMAZON MUSIC</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 LAST PROTOCOL — NOVA × ASH</p>
+</footer>
+
+<script src="data.js"></script>
+<script>
+// data.js (window.LP_DATA) is generated by scripts/update_content.py
+var D = window.LP_DATA || { latest: null, mvs: [], discography: [] };
+
+function esc(s){
+  return String(s).replace(/[&<>"]/g, function(c){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];
+  });
+}
+
+// click-to-load YouTube embed (keeps initial page light, no cookies until play)
+function mountVideo(frame, vid){
+  var lite = document.createElement('div');
+  lite.className = 'yt-lite';
+  lite.style.backgroundImage = 'url(https://i.ytimg.com/vi/' + vid + '/hqdefault.jpg)';
+  lite.addEventListener('click', function(){
+    var ifr = document.createElement('iframe');
+    ifr.src = 'https://www.youtube-nocookie.com/embed/' + vid + '?autoplay=1';
+    ifr.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+    ifr.allowFullscreen = true;
+    frame.replaceChild(ifr, lite);
+  });
+  frame.appendChild(lite);
+}
+
+// 01 / LATEST
+if (D.latest) {
+  document.getElementById('latest-h2').textContent = D.latest.titleEn.toUpperCase();
+  document.getElementById('latest-sub').textContent = '最新リリース「' + D.latest.titleJa + '」';
+  document.getElementById('latest-title').textContent = D.latest.titleEn;
+  document.getElementById('latest-ja').textContent = D.latest.titleJa;
+  document.getElementById('latest-desc').textContent = D.latest.desc;
+  mountVideo(document.getElementById('latest-video'), D.latest.videoId);
+}
+
+// 02 / MV GALLERY (top by view count)
+var grid = document.getElementById('mv-grid');
+D.mvs.forEach(function(mv){
+  var card = document.createElement('div');
+  card.className = 'mv-card';
+  card.innerHTML =
+    '<div class="video-frame"></div>' +
+    '<div class="meta"><h3>' + esc(mv.titleEn) + '</h3>' +
+    '<p>' + esc(mv.titleJa) + ' / ' + mv.views.toLocaleString() + ' views</p></div>';
+  grid.appendChild(card);
+  mountVideo(card.querySelector('.video-frame'), mv.videoId);
+});
+
+// 03 / DISCOGRAPHY
+var disco = document.getElementById('disco-grid');
+D.discography.forEach(function(r){
+  var item = document.createElement('div');
+  item.className = 'disco-item';
+  item.innerHTML =
+    '<div class="type">' + esc(r.type) + '</div>' +
+    '<h3>' + esc(r.titleEn) + '</h3><p>' + esc(r.titleJa) + '</p>';
+  disco.appendChild(item);
+});
+</script>
+</body>
+</html>
