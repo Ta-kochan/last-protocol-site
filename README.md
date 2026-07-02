@@ -51,7 +51,9 @@ python -m http.server 8765 --directory docs
 
 ## 公開（GitHub Pages）
 
-リポジトリ: `last-protocol-site`（Settings → Pages → Branch: main / `/docs`）
+リポジトリ: `last-protocol-site`。GitHub Actions（`.github/workflows/update-data.yml`）が
+**毎週月曜 06:00 JST／mainへのpush時／手動実行** で data.js を再生成し、`docs/` を
+そのままPagesへデプロイする（旧Jekyllビルドは廃止済み・build_type=workflow）。
 
 ### 独自ドメイン（任意・未設定）
 
@@ -65,4 +67,4 @@ python -m http.server 8765 --directory docs
 - [ ] DISCOGRAPHY 各カードに各ストリーミングのアルバムURLをリンク（DistroKidハイパーフォロー等）
 - [ ] OG画像を専用アートワークに差し替え（現状はYouTubeサムネ流用）
 - [ ] アクセス解析（GA4 or Cloudflare Web Analytics）追加
-- [ ] GitHub Actionsで update_content.py を定期実行（完全自動更新化）
+- [x] GitHub Actionsで update_content.py を定期実行（週1・完全自動更新化 2026-07-03）
