@@ -1,5 +1,7 @@
 {
   "discography": [
+    { "titleEn": "Automatism", "titleJa": "硝子の舞台" },
+    { "titleEn": "Neural Lattice", "titleJa": "秘密の格子" },
     { "titleEn": "Sabaku-no-Rondo", "titleJa": "錆びた輪舞曲" },
     { "titleEn": "Command", "titleJa": "愛のサーボ" },
     { "titleEn": "Install & Replay", "titleJa": "既視の純愛" },
@@ -21,5 +23,10 @@
   "latest_desc": {
     "TOs-0ShI2zQ": "砂と錆に覆われた終末の都市を、アコースティックの輪舞が巡る。LAST PROTOCOLの最新章。"
   },
-  "title_overrides": {}
+  "title_overrides": {
+    "[LAST PROTOCOL] Terminus Ragnarok 180日の契約 - Cyberpunk Anime J-Rock": {
+      "titleEn": "Terminus Ragnarok",
+      "titleJa": "180日の契約"
+    }
+  }
 }

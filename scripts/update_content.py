@@ -166,6 +166,44 @@ def fetch_videos_innertube() -> list[dict]:
                 "viewsText": info.split("•")[0].strip(),
             }
         )
+    if out:
+        return out
+
+    # Newer response format (since ~2026-06): lockupViewModel entries.
+    lockups: list[dict] = []
+
+    def walk_lockups(o):
+        if isinstance(o, dict):
+            if "lockupViewModel" in o:
+                lockups.append(o["lockupViewModel"])
+            for v in o.values():
+                walk_lockups(v)
+        elif isinstance(o, list):
+            for v in o:
+                walk_lockups(v)
+
+    walk_lockups(data)
+    for lk in lockups:
+        vid = lk.get("contentId", "")
+        md = lk.get("metadata", {}).get("lockupMetadataViewModel", {})
+        title = md.get("title", {}).get("content", "")
+        views_text = ""
+        rows = md.get("metadata", {}).get("contentMetadataViewModel", {}).get("metadataRows", [])
+        for row in rows:
+            for p in row.get("metadataParts", []):
+                t = p.get("text", {}).get("content", "")
+                if "回視聴" in t or "views" in t:
+                    views_text = t
+        if vid and title:
+            out.append(
+                {
+                    "videoId": vid,
+                    "title": title,
+                    "publishedAt": "",
+                    "views": parse_ja_views(views_text),
+                    "viewsText": views_text,
+                }
+            )
     return out
 
 
@@ -215,6 +253,7 @@ def split_title(raw: str, overrides: dict) -> tuple[str, str]:
         return body.split(" - ")[0].strip(), ""
     en, ja = body[: m.start()].strip(), body[m.start():].strip()
     ja = ja.split(" - ")[0].strip()  # drop trailing genre descriptor
+    en = en.rstrip(" -")  # '[LP] Command - 愛のサーボ' -> en 'Command', not 'Command -'
     return en, ja
 
 
