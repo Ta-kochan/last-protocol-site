@@ -11,22 +11,22 @@ window.LP_DATA = {
       "videoId": "U7MTDDPbm4k",
       "titleEn": "Proxy-Queen",
       "titleJa": "借り物の絶頂",
-      "views": 130000,
-      "viewsText": "13万回視聴"
+      "views": 140000,
+      "viewsText": "14万回視聴"
     },
     {
       "videoId": "1MZVCp7-mgM",
       "titleEn": "Assemblage",
       "titleJa": "斑駁の謝肉祭",
-      "views": 93000,
-      "viewsText": "9.3万回視聴"
+      "views": 98000,
+      "viewsText": "9.8万回視聴"
     },
     {
       "videoId": "mQ9USWtKfPM",
       "titleEn": "Perfect Semantic",
       "titleJa": "意味の純度",
-      "views": 62000,
-      "viewsText": "6.2万回視聴"
+      "views": 63000,
+      "viewsText": "6.3万回視聴"
     }
   ],
   "discography": [
